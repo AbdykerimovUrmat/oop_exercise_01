@@ -1,3 +1,5 @@
+//Абдыкеримов Урмат Эмирбекович М8О-206Б-19
+
 #include <iostream>
 #include <cmath>
 
@@ -13,13 +15,16 @@ class Angle {
     degrees = _degrees + _minutes / 60.0;    
   }
   void add(Angle aim) {
+    //увеличиваю degrees на угол aim
     degrees += aim.degrees;
   }
   void subtract(Angle aim) {
+    //уменьшаю degrees на aim
     degrees -= aim.degrees;
   }
 
   double inRadians() {
+    //значение degrees в радианах
     double res = degrees / 180.0 * PI;
     return res;
   }
@@ -32,7 +37,8 @@ class Angle {
     return cos(degrees / 180.0 * PI);
   }
 
-  double to2pi() {
+  void to2pi() {
+    //привожу degrees к отрезку [0:360] градусов
     if(degrees >= 0) {
       degrees -= (int)degrees / 360 * 360;
     } else {
@@ -41,12 +47,12 @@ class Angle {
   }
 
   bool isBigger(Angle aim) {
-    //if aim.degrees is bigger then degress return true
+    //если aim больше degrees возвращает true
     return aim.degrees > degrees; 
   }
 
   bool isSmaller(Angle aim) {
-    //if aim.degrees is smaller then degress return true
+    //если aim меньше degrees возвращает true
     return aim.degrees < degrees;
   }
 
@@ -55,6 +61,7 @@ class Angle {
   }
 
   double div(Angle aim) {
+    //во сколько раз degrees больше чем aim
     return degrees / aim.degrees;
   }
 };

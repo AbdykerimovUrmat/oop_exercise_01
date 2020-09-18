@@ -1,1 +1,4 @@
-cmake_minimum_required(VERSION 3.0);
+cmake_minimum_required(VERSION 3.12)
+project(oop_exercise_01)
+
+add_executable(oop_exercise_01 main.cpp)
