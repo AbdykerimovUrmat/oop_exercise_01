@@ -14,13 +14,16 @@ class Angle {
   Angle(double _degrees, double _minutes) {
     degrees = _degrees + _minutes / 60.0;    
   }
-  void add(Angle aim) {
-    //увеличиваю degrees на угол aim
-    degrees += aim.degrees;
+  Angle(Angle rhs) {
+    degrees = rhs.degrees;
   }
-  void subtract(Angle aim) {
-    //уменьшаю degrees на aim
-    degrees -= aim.degrees;
+  void add(Angle rhs) {
+    //увеличиваю degrees на угол rhs
+    degrees += rhs.degrees;
+  }
+  void subtract(Angle rhs) {
+    //уменьшаю degrees на rhs
+    degrees -= rhs.degrees;
   }
 
   double inRadians() {
@@ -46,23 +49,23 @@ class Angle {
     }
   }
 
-  bool isBigger(Angle aim) {
-    //если aim больше degrees возвращает true
-    return aim.degrees > degrees; 
+  bool isBigger(Angle rhs) {
+    //если rhs больше degrees возвращает true
+    return rhs.degrees > degrees; 
   }
 
-  bool isSmaller(Angle aim) {
-    //если aim меньше degrees возвращает true
-    return aim.degrees < degrees;
+  bool isSmaller(Angle rhs) {
+    //если rhs меньше degrees возвращает true
+    return rhs.degrees < degrees;
   }
 
-  bool isEqual(Angle aim) {
-    return abs(aim.degrees - degrees) < eps;
+  bool isEqual(Angle rhs) {
+    return abs(rhs.degrees - degrees) < eps;
   }
 
-  double div(Angle aim) {
-    //во сколько раз degrees больше чем aim
-    return degrees / aim.degrees;
+  double div(Angle rhs) {
+    //во сколько раз degrees больше чем rhs
+    return degrees / rhs.degrees;
   }
 };
 
